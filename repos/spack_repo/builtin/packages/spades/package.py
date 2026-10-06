@@ -53,6 +53,19 @@ class Spades(CMakePackage):
 
     root_cmakelists_dir = "src"
 
+    @when("@4.3: +sra")
+    def patch(self):
+        # The bundled sra-tools 3.4.x bakes CMAKE_PREFIX_PATH into a C string
+        # define; a multi-entry (;-separated) list leaves an unterminated quote.
+        # Don't forward it; Spack also exports it in the build environment.
+        filter_file(
+            'NOT var STREQUAL "CMAKE_INSTALL_PREFIX")',
+            'NOT var STREQUAL "CMAKE_INSTALL_PREFIX" AND\n'
+            '      NOT var STREQUAL "CMAKE_PREFIX_PATH")',
+            join_path("ext", "src", "ncbi", "CMakeLists.txt"),
+            string=True,
+        )
+
     def cmake_args(self):
         args = [self.define_from_variant("SPADES_USE_NCBISDK", "sra")]
         if self.spec.satisfies("+tools"):
