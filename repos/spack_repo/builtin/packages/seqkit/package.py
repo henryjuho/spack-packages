@@ -26,7 +26,7 @@ class Seqkit(GoPackage):
 
     # go.mod's "go" directive is a hard minimum since Go 1.21
     depends_on("go@1.17:", type="build")
-    depends_on("go@1.23.0:", type="build", when="@2.10:")
+    depends_on("go@1.23.0:", type="build", when="@2.10.1:")
     depends_on("go@1.24.0:", type="build", when="@2.11:")
     depends_on("go@1.25.5:", type="build", when="@2.13:")
     depends_on("go@1.25.14:", type="build", when="@2.14:")
