@@ -24,9 +24,11 @@ class Seqkit(GoPackage):
     version("2.5.1", sha256="76d105921f918be20e616fbb607fe0fb2db603535a254ec0f853cb36bef817da")
     version("2.4.0", sha256="c319f3d5feb7c99309e654042432959f01bbc5f7e4c71f55dc9854df46c73c7f")
 
-    depends_on("go@1.17:", type="build")
     # go.mod's "go" directive is a hard minimum since Go 1.21
-    depends_on("go@1.25.5:", type="build", when="@2.13")
+    depends_on("go@1.17:", type="build")
+    depends_on("go@1.23.0:", type="build", when="@2.10:")
+    depends_on("go@1.24.0:", type="build", when="@2.11:")
+    depends_on("go@1.25.5:", type="build", when="@2.13:")
     depends_on("go@1.25.14:", type="build", when="@2.14:")
 
     build_directory = "seqkit"
