@@ -10,7 +10,7 @@ from spack.package import *
 class PyPybigwig(PythonPackage):
     """A package for accessing bigWig files using libBigWig."""
 
-    pypi = "pyBigWig/pyBigWig-0.3.4.tar.gz"
+    pypi = "pybigwig/pybigwig-0.3.25.tar.gz"
 
     license("MIT")
 
