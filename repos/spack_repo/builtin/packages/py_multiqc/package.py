@@ -60,3 +60,5 @@ depends_on("python@3.8:")
     # 1.31's new xenium module imported scanpy and scipy; 1.32 reworked it without them
     depends_on("py-scanpy", type=("build", "run"), when="@1.31")
     depends_on("py-scipy", type=("build", "run"), when="@1.31")
+    
+    conflicts("python@3.14.1", when=@"1.34")
