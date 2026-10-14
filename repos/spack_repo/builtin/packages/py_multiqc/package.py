@@ -26,9 +26,9 @@ class PyMultiqc(PythonPackage):
     version("1.29", sha256="14e61bcb710caee59a7f6037d6a255f3062f6032e760734a351d9dd8a8be2609")
     version("1.28", sha256="3cb65ac9ca07b6146fb239e0bc42f5337808973cb37e1d9a8bd753eaf70ac7e7")
     version("1.23", sha256="4e84664000fec69a0952a0457a8d780dcc1ce9e36d14680dbdba5610b9766265")
-depends_on("python@3.8:")
+    
+    depends_on("python@3.8:")
     depends_on("py-setuptools", type="build")
-
     depends_on("py-click", type=("build", "run"))
     depends_on("py-humanize", type=("build", "run"))
     depends_on("py-importlib-metadata", type=("build", "run"))
