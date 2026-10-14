@@ -44,7 +44,7 @@ class PyMultiqc(PythonPackage):
     depends_on("py-plotly@5.18:", type=("build", "run"))
     depends_on("py-pyyaml@4:", type=("build", "run"))
     depends_on("py-pyaml-env", type=("build", "run"))
-    depends_on("py-pydantic@2.7.1:", type=("build", "run"))
+    depends_on("py-pydantic@2.7.0:", type=("build", "run"))
     depends_on("py-python-dotenv", type=("build", "run"))
     depends_on("py-rich@10:", type=("build", "run"))
     depends_on("py-rich-click", type=("build", "run"))
