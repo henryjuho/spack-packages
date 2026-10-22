@@ -27,6 +27,7 @@ class PyHighspy(PythonPackage):
     depends_on("python@3.8:", type=("build", "run"))
     depends_on("python@3.9:", type=("build", "run"), when="@1.15:")
     depends_on("py-scikit-build-core@0.3.3:", type="build")
+    depends_on("py-scikit-build-core@0.11:", type="build", when="@1.15:")
     depends_on("py-pybind11", type="build")
     depends_on("py-numpy", type=("build", "run"))
     depends_on("py-typing-extensions", type=("build", "run"), when="@1.15: ^python@:3.9")
